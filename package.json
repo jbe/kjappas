@@ -4,7 +4,7 @@
   "description": "HTML-as-JavaScript Snabbdom template library",
   "main": "index.js",
   "scripts": {
-    "prepublish": "coffee -c index.coffee"
+    "prepublish": "coffee -c -b index.coffee"
   },
   "repository": {
     "type": "git",
