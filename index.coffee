@@ -1,11 +1,11 @@
 
 snabbdom = require "snabbdom"
-sdClass  = require "snabbdom/modules/class"
-sdProps  = require "snabbdom/modules/props"
-sdAttrs  = require "snabbdom/modules/attributes"
-sdStyle  = require "snabbdom/modules/style"
-sdEvents = require "snabbdom/modules/eventlisteners"
-h        = require('snabbdom/h')
+sdClass  = require("snabbdom/modules/class").default
+sdProps  = require("snabbdom/modules/props").default
+sdAttrs  = require("snabbdom/modules/attributes").default
+sdStyle  = require("snabbdom/modules/style").default
+sdEvents = require("snabbdom/modules/eventlisteners").default
+h        = require('snabbdom/h').default
 
 isValidSnabbdomChild = (x) ->
   ((typeof x == "string") or
@@ -23,15 +23,18 @@ helper = (selector, data, children) ->
     on: {}
     attrs: {}
     props: {}
+    hook: {}
 
   for own k, v of data
     switch k
       when "selector" then selector += v
-      when "class", "key", "style", "on", "attrs", "props" then newData[k] = v
+      when "class", "key", "style", "on", "attrs", "props", "hook"
+        newData[k] = v
       else switch k[0]
         when "$" then newData.on[   k.slice(1)] = v
         when "%" then newData.attrs[k.slice(1)] = v
         when "." then newData.class[k.slice(1)] = v
+        when "_" then newData.hook[k.slice(1)] = v
         else newData.props[k] = v
 
   h selector, newData, children
