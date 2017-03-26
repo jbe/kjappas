@@ -90,7 +90,7 @@ The optional `selector` parameter is a css selector similar to the one in `snabb
 
 ##### data
 
-The optional `data` parameter accepts the same fields as `snabbdom/h`, along with some additional shorthands. The supported snabbdom-style object fields are `class`, `key`, `style`, `on`, `attrs` and `props`. However, there are more conventient shorthands:
+The optional `data` parameter accepts the same fields as `snabbdom/h`, along with some additional shorthands. The supported snabbdom-style object fields are `class`, `key`, `style`, `on`, `attrs`, `props` and `hook`. However, there are more conventient shorthands:
 
 ```javascript
 // instead of writing..
