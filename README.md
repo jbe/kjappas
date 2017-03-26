@@ -114,6 +114,7 @@ Here is the "translation" table from kjappas to snabbdom:
     .           class
     $           on
     %           attrs
+    _           hook
     (no prefix) props
 
 A more elaborate example:
