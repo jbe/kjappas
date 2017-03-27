@@ -51,7 +51,8 @@ defineTag = module.exports.defineTag = (tag) ->
 
     sel = tag
     sel += args.shift() if looksLikeSelector args[0]
-    params = args.shift() if typeof args[0] == "object"
+    if typeof args[0] == "object" and not isValidSnabbdomChild(args[0])
+      params = args.shift()
 
     helper sel, params, [].concat.apply([], args)
 
