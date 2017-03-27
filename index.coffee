@@ -18,12 +18,7 @@ looksLikeSelector = (x) ->
 
 # parse selector, data and children to produce some snabb dom
 helper = (selector, data, children) ->
-  newData =
-    class: {}
-    on: {}
-    attrs: {}
-    props: {}
-    hook: {}
+  newData = {}
 
   for own k, v of data
     switch k
@@ -31,11 +26,11 @@ helper = (selector, data, children) ->
       when "class", "key", "style", "on", "attrs", "props", "hook"
         newData[k] = v
       else switch k[0]
-        when "$" then newData.on[   k.slice(1)] = v
-        when "%" then newData.attrs[k.slice(1)] = v
-        when "." then newData.class[k.slice(1)] = v
-        when "_" then newData.hook[k.slice(1)] = v
-        else newData.props[k] = v
+        when "$" then (newData.on    or= {})[k.slice(1)] = v
+        when "%" then (newData.attrs or= {})[k.slice(1)] = v
+        when "." then (newData.class or= {})[k.slice(1)] = v
+        when "_" then (newData.hook  or= {})[k.slice(1)] = v
+        else          (newData.props or= {})[k]          = v
 
   h selector, newData, children
 
