@@ -82,7 +82,7 @@ debounceZero = (fn) ->
   cb = ->
     args = arguments
     clearTimeout(timeout)
-    tieout = setTimeout (-> fn(args...)), 0
+    timeout = setTimeout (-> fn(args...)), 0
 
 # create a refresh function (see docs)
 module.exports.createRefresh = (fn, vnode, patch) ->

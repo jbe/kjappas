@@ -7,6 +7,8 @@
 
 Kjappas is a template syntax for [Snabbdom](https://github.com/snabbdom/snabbdom), and an alternative to [`snabdom/h`](https://github.com/snabbdom/snabbdom#snabbdomh). It lets you write reactive HTML templates that are plain old JavaScript functions.
 
+Relatives: [globus](https://github.com/jbe/globus) | [immux](https://github.com/jbe/immux) | [SimpleImmutable](https://github.com/jbe/simple-immutable)
+
 ## Installation
 
 `npm install --save kjappas`
