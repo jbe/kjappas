@@ -100,6 +100,8 @@ module.exports.infest = (obj=window) ->
 
 # Included utility components
 
+# TODO: add as optional infest
+
 Link = module.exports.Link = tagMod "a", (t) ->
     t.data.props.href or= "#"
     t.data.on.click = defaultPrevented(t.data.on.click)

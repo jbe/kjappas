@@ -4,7 +4,7 @@
   "description": "HTML-as-JavaScript Snabbdom template library",
   "main": "index.js",
   "scripts": {
-    "prepublish": "coffee -c -b index.coffee"
+    "prepublish": "coffee -c -b index.coffee && browserify oldschool.entry.js > oldschool.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "snabbdom": "^0.6.7"
   },
   "devDependencies": {
+    "browserify": "^14.3.0",
     "coffee-script": "^1.12.4"
   }
 }
